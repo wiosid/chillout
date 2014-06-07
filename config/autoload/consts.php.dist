@@ -1,0 +1,19 @@
+<?php
+
+
+define('SITE_URL', $_SERVER['HTTP_HOST']);
+define('BASE_URL', SITE_URL);
+define('PROJECT_BASE_PATH', $_SERVER['DOCUMENT_ROOT']);
+define('UPLOAD_PATH', PROJECT_BASE_PATH.'/assets/uploads');
+define('APPOSCF_UPLOAD_PATH', PROJECT_BASE_PATH.'/assets/uploads');
+echo PATH_PROJECT;exit;
+/* Swagger Configuration */
+
+define('SWAGGER_DISCOVERY_URL', SITE_URL . '/api-ui/api-docs.json');
+
+if( $_SERVER['HTTP_HOST'] == 'api.bms.local' ){
+   
+}else{
+
+}
+

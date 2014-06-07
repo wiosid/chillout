@@ -1,0 +1,45 @@
+<?php
+$form = $this->loginForm;
+$form->prepare();
+$form->setAttribute('action', $this->url('zfcuser/login'));
+$form->setAttribute('method', 'post');
+$form->get('identity')->setAttribute('placeholder','Your Username')->setAttribute('class','loginEmail');
+$form->get('credential')->setAttribute('placeholder','Password')->setAttribute('class','loginPassword');
+$form->get('submit')->setAttribute('class','submit-btn');
+$form->get('remember_me')->setAttribute('class','check')->setAttribute('id','remember1');
+
+?>
+
+<!-- Login wrapper begins -->
+<div class="loginWrapper loginBodyContainer">
+  <h1>Login to Sly</h1>
+  <!-- Current user form -->    
+  <?php echo $this->form()->openTag($form) ?>
+    <?php echo $this->formElementErrors($form->get('identity')) ?>
+    <?php if($this->err_msg){?><span class="err"><?php echo $this->err_msg;?></span><?php } ?>
+    <?php if($this->msg){?><span class="success"><?php echo $this->msg;?></span><?php } ?>
+    <div class="loginField">
+     <?php echo $this->formInput($form->get('identity'))//echo $this->formText('user_email',(isset($_COOKIE['uemail'])?$_COOKIE['uemail']:$_POST['user_email']),array('class'=>'loginEmail','placeholder'=>'Your Email'));?>
+     <!--<input type="password" name="user_password" value="<?php //echo (isset($_COOKIE['upass'])?$_COOKIE['upass']:'')?>" class="loginPassword" placeholder="Password" />
+      <div class="logControl">-->
+        <?php echo $this->formInput($form->get('credential')); ?>
+        
+        <?php if ($this->redirect): ?>
+            <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
+        <?php endif ?>
+
+        <div class="memory">
+          <!--<input name="remember_me" type="checkbox" <?php if( isset($_COOKIE['uemail']) && isset($_COOKIE['upass'])) {echo 'checked="checked"';}?> class="check" id="remember1" value="on"/>-->
+          <?php echo $this->formCheckbox($form->get('remember_me')) ?>
+          <label for="remember1">Remember me</label>
+        </div>
+            <br/>
+        <!--<input type="submit" name="submit" value="Login" class="submit-btn" />-->
+        <?php echo $this->formButton($form->get('submit')) ?>
+        <div class="clear"></div>
+      </div>
+
+      <?php echo $this->form()->closeTag() ?>
+      
+    </div>
+<!-- Login wrapper ends -->

@@ -1,0 +1,76 @@
+<div class="pageInfo">
+    <h1>All user</h1>
+</div>
+
+<!-- widget -->
+<div class="widget">
+    <div id="dyn" class="hiddenpars"> <a class="tOptions" title="Options"><img src="<?php echo BASE_URL; ?>/images/icons/options" alt="" /></a>
+        <?php
+        if (!empty($this->messages)) {
+            foreach ($this->messages as $k => $message) {
+                if (is_array($message)) {
+                    if ($message['status'] == 'OK') {
+                        echo "<span class='form_response success'>" . $message['message'] . "</span>";
+                    }
+                } else {
+                    echo $message;
+                }
+            }
+        }
+        ?>
+        <table cellpadding="0" cellspacing="0" border="0" class="dTable" id="dynamic">
+            <thead>
+                <tr>
+                    <th>S. No<span class="sorting" style="display: block;"></span></th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Created On</th>                
+                    <th>Updated On</th>                
+                    <th>Status</th>                
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($this->users as $user) { ?>
+                    <tr>
+                        <td><?php echo ++$i ?>.</td>
+                        <td><a href="<?php echo BASE_URL . '/admin/users/edit/' . $user['user_id']; ?>"><?php echo $user['fld_name']; ?></a></td>
+                        <td><?php echo $user['email']; ?></td>
+                        <td>
+                            <?php
+                            if ($user['fld_created_datetime'] && date('d/m/Y H:i:s', ($user['fld_created_datetime'])) != "0000-00-00 00:00:00") {
+                                echo date('d/m/Y H:i:s', ($user['fld_created_datetime']));
+                            } else {
+                                echo 'N/A';
+                            }
+                            ?>
+                        </td>   
+                        <td>
+    <?php
+    if ($user['fld_updated_datetime'] && date('d/m/Y H:i:s', ($user['fld_updated_datetime'])) != "0000-00-00 00:00:00") {
+        echo date('d/m/Y H:i:s', ($user['fld_updated_datetime']));
+    } else {
+        echo 'N/A';
+    }
+    ?>
+                        </td>   
+                        <td>
+                            <?php
+                            echo ($user['fld_status']) ? "Active" : "Inactive";
+                            ?>
+                        </td>   
+                        <td>
+                            <?php if (empty($user['fld_is_blocked'])) { ?>
+                                <a class="block" href="<?php echo BASE_URL . '/admin/users/block/' . $user['user_id']; ?>" onclick="return confirm('Are you sure you wish to block this user?');"><img src="<?php echo BASE_URL; ?>/images/block.png" alt="" /></a>
+    <?php } else { ?><a class="unblock" href="<?php echo BASE_URL . '/admin/users/unblock/' . $user['user_id']; ?>" onclick="return confirm('Are you sure you wish to unblock this user?');"><img src="<?php echo BASE_URL; ?>/images/unblock.png" alt="" /></a>
+                            <?php } ?>	<a href="<?php echo BASE_URL . '/admin/users/edit/' . $user['user_id']; ?>"><img src="<?php echo BASE_URL; ?>/images/edit-icon.png" alt="" /></a>
+                            <a href="<?php echo BASE_URL . '/admin/users/delete/' . $user['user_id']; ?>" onclick="return confirm('Are you sure you wish to delete this user?');"><img src="<?php echo BASE_URL; ?>/images/delete.png" alt="" /></a>
+
+                        </td>
+                    </tr>
+<?php } ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- /widget -->

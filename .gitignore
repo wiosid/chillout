@@ -1,0 +1,11 @@
+vendor/*
+.settings/
+.project
+.buildpath
+composer.lock
+
+/nbproject/private/
+/nbproject/
+/.idea/*
+
+/.idea/

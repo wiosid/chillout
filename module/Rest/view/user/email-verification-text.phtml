@@ -1,0 +1,3 @@
+Hi,
+Click Here or copy & paste this link to verify your email
+<?php echo $this->url('verify-code', array(), array('force_canonical' => true,'query' => array('code' => $this->verification_code))); ?>

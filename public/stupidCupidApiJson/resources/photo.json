@@ -1,0 +1,110 @@
+{
+    "basePath": "http://localhost/stupid-cupid/public/api",
+    "swaggerVersion": "1.1",
+    "apiVersion": "0.0",
+    "resourcePath": "/photo",
+    "apis": [
+        {
+            "path": "/photos/add",
+            "operations": [
+                {
+                    "httpMethod": "post",
+                    "summary": "Implemented for uploading photos",
+                    "nickname": "add",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_photo[0]",
+                            "description": "User photos",
+                            "allowMultiple": true,
+                            "dataType": "file",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "name": "fld_photo[1]",
+                            "description": "User photos",
+                            "allowMultiple": true,
+                            "dataType": "file",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "name": "fld_photo[2]",
+                            "description": "User photos",
+                            "allowMultiple": true,
+                            "dataType": "file",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "name": "fld_photo[3]",
+                            "description": "User photos",
+                            "allowMultiple": true,
+                            "dataType": "file",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for uploading photos"
+        },
+        {
+            "path": "/photos/delete",
+            "operations": [
+                {
+                    "httpMethod": "DELETE",
+                    "summary": "Implemented for deleting photos",
+                    "nickname": "delete",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_photo_id",
+                            "description": "Photo Id , use comma seperated ids for deleting multiple photos",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": true
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for deleting photos"
+        }
+    ]
+}

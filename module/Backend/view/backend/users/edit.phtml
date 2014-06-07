@@ -1,0 +1,49 @@
+<style>
+ul li{
+	color:red;
+}
+</style>
+<div class="pageInfo">
+     <h1>Edit User</h1>
+</div>
+<!-- widget -->
+<div class="widget">
+     <div class="formWrap">
+     
+      <?php
+           if(!empty($this->messages))
+           {
+           	foreach($this->messages as $k=>$message){
+           		if(is_array($message)){
+					if($message['status'] == 'OK'){
+						echo "<span class='success'>".$message['message']."</span>";
+					}else if($message['status'] == 'FAIL'){
+						echo "<span class='error'>".$message['message']."</span>";
+					}
+				}else{
+					echo $message;
+				}
+           	}
+           }
+       ?>
+     
+     <?php
+     
+	     $form = $this->form;
+	     $form->prepare();
+	     
+	     echo $this->form()->openTag($form);
+	     
+	     $user = $form->get('user');
+	     
+	     echo $this->formRow($user->get('fld_name'));
+	     echo $this->formRow($user->get('email'));
+	     
+             echo $this->formHidden($form->get('csrf'));
+	     echo $this->formRow($form->get('submit'));
+	     echo $this->formRow($form->get('cancel'));
+	     echo $this->form()->closeTag();
+	     
+     ?>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<?php echo $this->doctype(); ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+            <?php
+            echo $this->headTitle('Sly ' . $this->translate(''))->setSeparator(' - ')->setAutoEscape(false);
+
+            $baseUrl = BASE_URL;
+
+            echo $this->headMeta()//->appendName("text/html; charset=UTF-8","Content-Type","http-equiv")
+                    ->appendName("width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", "viewport");
+
+            echo $this->headLink(array(
+                        'rel' => 'favicon icon',
+                        'href' => BASE_URL.'/images/favicon2.ico',
+                            ), 'PREPEND');
+//			echo $this->headLink()->appendStylesheet( $baseUrl.'/css/styles.css') 
+//				 	->appendStylesheet( $baseUrl.'/css/styles2.css')
+//					->appendStylesheet(  $baseUrl.'/css/ie.css', 'screen', 'IE');
+
+
+            echo $this->headScript()
+                    ->prependScript('BASE_URL = "' . BASE_URL . '";');
+
+            echo $this->headStyle();
+            ?>
+    </head>
+
+    <body>
+
+<?php //echo $this->partial('layout/header') ?>
+
+        <?php
+        //$action = $this->ActionName();
+// 			if($action == 'login'){
+// 				$classes = 'loginBodyContainer ';
+// 			}
+        ?>
+
+        <!-- container begins -->
+        <div class="container <?php echo $classes; ?>"> 
+
+<?php //if ($this->zfcUserIdentity()): ?>
+                <!-- Sidebar begins -->
+                <?php //echo $this->partial("layout/sidebar"); ?>
+                <!-- Sidebar ends -->
+            <?php //endif; ?> 
+
+            <!-- Content begins -->
+            <div id="content">
+                <div class="wrapper">
+
+                    <!-- Content begins -->
+<?php echo $this->content; ?>
+                    <!-- Content ends --> 
+
+                </div>
+            </div>
+            <!-- Content ends --> 
+
+        </div>
+        <!-- container end -->
+
+<?php //echo $this->partial("layout/footer"); ?>
+
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<?php
+$title = 'Report Abuses';
+$this->headTitle($title);
+
+
+?>
+<div class="pageInfo">
+    <h1><?php echo $title; ?></h1>
+</div>
+<!-- widget -->
+<div class="widget">
+    <?php //if (!empty($response)) { ?>
+    <div id="response" class="<?php echo $response['status']; ?> form_response"><?php echo $response['message']; ?></div>
+    <?php //} ?>
+    <div id="dyn" class="hiddenpars"> <a class="tOptions" title="Options"><img src="images/icons/options" alt="" /></a>
+        <table cellpadding="0" cellspacing="0" border="0" class="dTable" id="dynamic">
+            <thead>
+                <tr>
+                    <th>S. No<span class="sorting" style="display: block;"></span></th>
+                    <th> Who Reported</th>
+                    <th> Whom Reported</th>
+                    <th> Reason </th>
+                    <th style="width: 350px;"> Message </th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $i = 1;
+                foreach ($reportAbuses as $reportAbuse) {
+                    ?>
+                    <tr>
+                        <td><?php echo $i; ?>.</td>
+                        <td>
+                            <?php if (!empty($reportAbuse['user']['fld_profile_photo'])) { ?>
+                                <img alt="" src="<?php echo BASE_URL; ?>/php/thumb.php?w=30&amp;src=<?php echo $reportAbuse['user']['fld_profile_photo']; ?>">
+                            <?php } ?>
+                            <?php echo $this->escapeHtml($reportAbuse['user']['fld_name']); ?>
+                        </td>
+                        <td>
+                            <?php if (!empty($reportAbuse['other_user']['fld_profile_photo'])) { ?>
+                                <img alt="" src="<?php echo BASE_URL; ?>/php/thumb.php?w=30&amp;src=<?php echo $reportAbuse['other_user']['fld_profile_photo']; ?>">
+                            <?php } ?>
+                            <?php echo $this->escapeHtml($reportAbuse['other_user']['fld_name']); ?>
+                        </td>
+                        <td><?php echo $reportAbuse['fld_reason']; ?></td> 
+                        <td><?php echo $this->escapeHtml($reportAbuse['fld_text']); ?></td> 
+                        <!--<td><a href="<?php echo BASE_URL.'/admin/users/delete/'.$reportAbuse['other_user']['id'];?>" onclick="return confirm('Are you sure you wish to delete this reported user?');"><img src="<?php echo BASE_URL;?>/images/delete.png" alt="" /></a></td>--> 
+                        <td><a href="javascript:void(0);" onclick="return confirm('Are you sure you wish to delete this reported user?');"><img src="<?php echo BASE_URL;?>/images/delete.png" alt="" /></a></td> 
+                    </tr>
+                    <?php
+                    $i++;
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- /widget -->

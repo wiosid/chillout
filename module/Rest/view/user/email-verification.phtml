@@ -1,0 +1,5 @@
+Hi,
+<p>
+    <a href="<?php echo $this->url('verify-code', array(), array('force_canonical' => true,'query' => array('code' => $this->verification_code))); ?>">Click Here</a> to verify your email.<br/>
+    OR copy this link : <?php echo $this->url('verify-code', array(), array('force_canonical' => true,'query' => array('code' => $this->verification_code))); ?><br />
+</p>

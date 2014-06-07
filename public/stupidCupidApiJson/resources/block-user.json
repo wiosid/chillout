@@ -1,0 +1,86 @@
+{
+    "basePath": "http://localhost/stupid-cupid/public/api",
+    "swaggerVersion": "1.1",
+    "apiVersion": "0.0",
+    "resourcePath": "/block-user",
+    "apis": [
+        {
+            "path": "/block-users/add",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Implemented for blocking users",
+                    "nickname": "logout",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_user_id",
+                            "description": "User id",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for blocking users"
+        },
+        {
+            "path": "/block-users/delete/{fld_user_id}",
+            "operations": [
+                {
+                    "httpMethod": "DELETE",
+                    "summary": "Implemented for unblocking users",
+                    "nickname": "logout",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_user_id",
+                            "description": "User id",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for unblocking users"
+        }
+    ]
+}

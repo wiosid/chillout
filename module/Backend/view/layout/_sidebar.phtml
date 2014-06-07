@@ -1,0 +1,46 @@
+<?php
+/* echo $controllerName =$this->params('controller');
+  echo $actionName = $this->params('action');exit; */
+//_pre($this->users);
+
+$nav = array(
+    'users' => array('Backend\Controller\Users' => array('index', 'add', 'edit','list')),
+    'report' => array('Backend\Controller\ReportAbuses' => array('index')),
+);
+
+$active = $this->isActive($nav);
+//_pre($active);
+?>
+<!-- Sidebar begins -->
+<div id="sidebar">
+    <div class="mainNav">
+        <!-- Responsive nav -->
+        <div class="altNav">
+            <div class="userSearch">
+                <form action="">
+                    <input type="text" placeholder="search..." name="userSearch" />
+                    <input type="submit" value="" />
+                </form>
+            </div>
+        </div>
+        <!-- Main nav -->
+        <ul class="nav">
+            <li class="none"><a onclick="document.href = '<?php echo BASE_URL; ?>/admin'">Dashboard</a></li>
+            <li class="<?php echo $active['users'] ? "active" : ""; ?>"> <a href="javascript:void();" title=""><span>User</span></a>
+                <ul <?php echo $active['users'] ? 'style="display:block;"' : ""; ?>>
+
+                    <li><a href="<?php echo BASE_URL . '/admin/users' ?>" title="" class="<?php echo $active['users_index'] ? "this" : ""; ?>"><span>Stats</span><img src="<?php echo BASE_URL; ?>/images/nav-hover.png" class="arr" alt="" /></a></li>
+                    <li><a href="<?php echo BASE_URL . '/admin/users/list' ?>" title="" class="<?php echo $active['users_list'] || $active['users_edit'] ? "this" : ""; ?>"><span>All</span><img src="<?php echo BASE_URL; ?>/images/nav-hover.png" class="arr" alt="" /></a></li>
+
+
+                </ul>
+            </li>
+            <li class="<?php echo $active['report'] ? "active" : ""; ?>"> <a href="javascript:void();" title=""><span>Report Abuses</span></a>
+                    <ul <?php echo $active['report'] ? 'style="display:block;"' : ""; ?>>
+                        <li><a href="<?php echo BASE_URL . '/admin/report-abuses' ?>" class="<?php echo $active['report_index'] ? "this" : ""; ?>"><span>All</span><img src="<?php echo BASE_URL; ?>/images/nav-hover.png" class="arr" alt="" /></a></li>
+                    </ul>
+                </li>
+        </ul>
+    </div>
+</div>
+<!-- Sidebar ends -->

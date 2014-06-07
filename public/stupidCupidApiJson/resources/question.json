@@ -1,0 +1,47 @@
+{
+    "basePath": "http://localhost/stupid-cupid/public/api",
+    "swaggerVersion": "1.1",
+    "apiVersion": "0.0",
+    "resourcePath": "/question",
+    "apis": [
+        {
+            "path": "/questions/list",
+            "operations": [
+                {
+                    "httpMethod": "get",
+                    "summary": "Implemented for getting questions list",
+                    "nickname": "list",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "datetime",
+                            "description": "questions object's datetime of whose respect you want to fetch questions",
+                            "allowMultiple": false,
+                            "dataType": "datetime",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for getting questions list"
+        }
+    ]
+}

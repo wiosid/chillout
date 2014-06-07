@@ -1,0 +1,6 @@
+<?php
+define('LOCAL_FILE_BASE_DIRECTORY', "/var/www/sly/public");
+define ('ALLOW_EXTERNAL', true);
+define ('ALLOW_ALL_EXTERNAL_SITES', true);
+
+

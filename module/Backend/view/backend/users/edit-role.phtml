@@ -1,0 +1,134 @@
+<?php
+$permissions = $this->data['permissions'];
+$roleName = $this->data['roleName'];
+$roleId = $this->roleId;
+?>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('input[name^=permissions]').click(function() {
+            permission_id = $(this).val();
+
+            if ('10' == permission_id) {
+                if ($(this).attr('checked') == 'checked') {
+                    if (confirm('Edit Category has dependency of Assign Attribute.\nClick Ok to resolve dependency.')) {
+                        $('input[name="permissions[30]"]').attr("checked", "checked");
+                    }
+                } else {
+                    $('input[name="permissions[30]"]').attr("checked", false);
+                }
+            }
+        });
+    });
+</script>
+<div class="pageInfo">
+    <h1>Edit Role</h1>
+</div>
+<!-- widget -->
+<div class="widget">
+    <div class="formWrap">
+
+
+        <form method="post" action="<?php echo BASE_URL; ?>/admin/users/edit-role/<?php echo $roleId; ?>" id="formAddApp">           
+
+            <input type="text" name="roleName" placeholder="Title" class="formInput" value="<?php echo $roleName; ?>"/>
+            <?php
+            if ($this->result['status'] == 'FAIL') {
+                echo '<span class="error">' . $result['message'] . '</span>';
+            }
+            ?>   
+            <h3>Permissions</h3>
+
+
+            <div class="addRole">
+                <div class="upload permissions">
+                    <h5>Classified Management</h5>
+                    <p><input name="permissions[13]" type="checkbox" <?php echo isset($permissions['13']) ? 'checked' : "" ?> value="13"> <label>Add Classified</label></p>
+                    <p><input name="permissions[14]" type="checkbox" <?php echo isset($permissions['14']) ? 'checked' : "" ?> value="14"> <label>Edit Classified</label></p>
+                    <p><input name="permissions[15]" type="checkbox" <?php echo isset($permissions['15']) ? 'checked' : "" ?> value="15"> <label>Delete Classified</label></p>        
+                </div>
+
+                <div class="upload permissions">
+                    <h5>Attribute Management</h5>
+                    <p><input name="permissions[27]" type="checkbox" <?php echo isset($permissions['27']) ? 'checked' : "" ?> value="27"><label>Add Attribute</label></p>
+                    <p><input name="permissions[28]" type="checkbox" <?php echo isset($permissions['28']) ? 'checked' : "" ?> value="28"><label>Edit Attribute</label></p>
+                    <p><input name="permissions[29]" type="checkbox" <?php echo isset($permissions['29']) ? 'checked' : "" ?> value="29"><label>Delete Attribute</label></p>
+                    <p><input name="permissions[30]" type="checkbox" <?php echo isset($permissions['30']) ? 'checked' : "" ?> value="30"><label>Assign Attribute</label></p>      
+                </div> 
+
+                <div class="upload permissions">
+                    <h5>Category Management</h5>
+                    <p><input name="permissions[9]" type="checkbox" <?php echo isset($permissions['9']) ? 'checked' : "" ?> value="9"> <label>Add Category</label></p>
+                    <p><input name="permissions[10]" type="checkbox" <?php echo isset($permissions['10']) ? 'checked' : "" ?> value="10"> <label>Edit Category</label></p>
+                    <p><input name="permissions[11]" type="checkbox" <?php echo isset($permissions['11']) ? 'checked' : "" ?> value="11"> <label>Delete Category</label></p>      
+                </div>
+
+                <div class="upload permissions">
+                    <h5>User Management</h5>
+                    <p><input name="permissions[1]" type="checkbox" <?php echo isset($permissions['1']) ? 'checked' : "" ?> value="1"> <label>Add User</label></p>
+                    <p><input name="permissions[2]" type="checkbox" <?php echo isset($permissions['2']) ? 'checked' : "" ?> value="2"> <label>Edit User</label></p>
+                    <p><input name="permissions[3]" type="checkbox" <?php echo isset($permissions['3']) ? 'checked' : "" ?> value="3"> <label>Delete User</label></p>            
+                </div> 
+
+                <div class="upload permissions">
+                    <h5>Role Management</h5>
+                    <p><input name="permissions[34]" type="checkbox" <?php echo isset($permissions['34']) ? 'checked' : "" ?> value="34"> <label>Add Role</label></p>
+                    <p><input name="permissions[35]" type="checkbox" <?php echo isset($permissions['35']) ? 'checked' : "" ?> value="35"> <label>Edit Role</label></p>
+                    <p><input name="permissions[36]" type="checkbox" <?php echo isset($permissions['36']) ? 'checked' : "" ?> value="36"> <label>Delete Role</label></p>            
+                </div> 
+
+                <div class="upload permissions">
+                    <h5>Advertise Management</h5>
+                    <p><input name="permissions[17]" type="checkbox" <?php echo isset($permissions['17']) ? 'checked' : "" ?> value="17"> <label>Add Advertisement</label></p>
+                    <p><input name="permissions[18]" type="checkbox" <?php echo isset($permissions['18']) ? 'checked' : "" ?> value="18"> <label>Edit Advertisement</label></p>
+                    <p><input name="permissions[19]" type="checkbox" <?php echo isset($permissions['19']) ? 'checked' : "" ?> value="19"> <label>Delete Advertisement</label></p>
+                </div> 
+
+                <div class="upload permissions">
+                    <h5>Manage Feeds</h5>
+                    <p><input name="permissions[41]" type="checkbox" <?php echo isset($permissions['41']) ? 'checked' : "" ?> value="41"> <label>Add Feed Url</label></p>
+                    <p><input name="permissions[42]" type="checkbox" <?php echo isset($permissions['42']) ? 'checked' : "" ?> value="42"> <label>Edit Feed Url</label></p>
+                    <p><input name="permissions[43]" type="checkbox" <?php echo isset($permissions['43']) ? 'checked' : "" ?> value="43"> <label>Delete Feed Url</label></p>            
+                </div> 
+
+                <div class="upload permissions">
+                    <h5>Approval Management</h5>
+                    <p><input name="permissions[21]" type="checkbox" <?php echo isset($permissions['21']) ? 'checked' : "" ?> value="21"> <label>Accept Classified</label></p>
+                    <p><input name="permissions[22]" type="checkbox" <?php echo isset($permissions['22']) ? 'checked' : "" ?> value="22"> <label>Reject Classified</label></p>
+                </div>
+
+                <div class="upload permissions">
+                    <h5>Widget Permissions</h5>
+                    <p><input name="permissions[44]" type="checkbox" <?php echo isset($permissions['44']) ? 'checked' : "" ?> value="44"> <label>Add Widget</label></p>
+                    <p><input name="permissions[45]" type="checkbox" <?php echo isset($permissions['45']) ? 'checked' : "" ?> value="45"> <label>Edit Widget</label></p>
+                    <p><input name="permissions[46]" type="checkbox" <?php echo isset($permissions['46']) ? 'checked' : "" ?> value="46"> <label>Delete Widget</label></p>
+                </div>
+
+                <div class="upload permissions">
+                    <h5>Page Permissions</h5>
+                    <p><input name="permissions[39]" type="checkbox" <?php echo isset($permissions['39']) ? 'checked' : "" ?> value="39"> <label>Add Page</label></p>
+                    <p><input name="permissions[38]" type="checkbox" <?php echo isset($permissions['38']) ? 'checked' : "" ?> value="38"> <label>Edit Page</label></p>
+                    <p><input name="permissions[40]" type="checkbox" <?php echo isset($permissions['40']) ? 'checked' : "" ?> value="40"> <label>Delete Page</label></p>
+                </div>
+                
+                <div class="upload permissions">
+                    <h5>Prayer Permissions</h5>
+                    <p><input name="permissions[47]" type="checkbox" <?php echo isset($permissions['47']) ? 'checked' : "" ?> value="47"> <label>Access Prayer Methods</label></p>
+                    <p><input name="permissions[48]" type="checkbox" <?php echo isset($permissions['48']) ? 'checked' : "" ?> value="48"> <label>Update Prayer Methods</label></p>
+                </div>
+                
+                <div class="upload permissions">
+                    <h5>Report Abuse Permissions</h5>
+                    <p><input name="permissions[49]" type="checkbox" <?php echo isset($permissions['49']) ? 'checked' : "" ?> value="49"> <label>Report Abuse Access</label></p>
+                </div>
+
+                <!-- 	<div class="upload permissions">
+                              <h5>Adminpanel</h5>
+                              <p> <label>Adminpanel Access</label></p>
+                      </div> -->
+            </div>  
+                        <!-- <input name="permissions[37]" type="checkbox" <?php //echo isset($permissions['37'])?'checked':"" ?> value="37"> -->
+            <input class="submit-btn " type="submit" value="Save" name="submit" title="Add App">
+            <input type="reset" value="Cancel" class="btnGray ml10">
+        </form>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+{
+    "basePath": "http://localhost/stupid-cupid/public/api",
+    "swaggerVersion": "1.1",
+    "apiVersion": "0.0",
+    "resourcePath": "/report-abuses",
+    "apis": [
+        {
+            "path": "/report-abuses/add",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Implemented for reporting an object",
+                    "nickname": "add",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_user_id",
+                            "description": "User id",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "fld_reason",
+                            "description": "Reason",
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": true,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    "Report for inappropriate content",
+                                    "Abuse",
+                                    "Fake User",
+                                    "Other"
+                                ]
+                            },
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "fld_text",
+                            "description": "Description why you are reporting",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": ""
+                }
+            ],
+            "description": "Implemented for reporting an object"
+        }
+    ]
+}

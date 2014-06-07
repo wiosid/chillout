@@ -1,0 +1,942 @@
+{
+    "basePath": "http://localhost/stupid-cupid/public/api",
+    "swaggerVersion": "1.1",
+    "apiVersion": "0.0",
+    "resourcePath": "/user",
+    "apis": [
+        {
+            "path": "/users/chat",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Implemented for upload image",
+                    "nickname": "chat",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "image",
+                            "description": "image",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": ""
+                }
+            ],
+            "description": "Implemented for upload image"
+        },
+        {
+            "path": "/users/delete",
+            "operations": [
+                {
+                    "httpMethod": "DELETE",
+                    "summary": "Implemented for deleting user account",
+                    "nickname": "logout",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for deleting user account"
+        },
+        {
+            "path": "/users/email-verification",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Implemented for email-verification",
+                    "nickname": "email-verification",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "email",
+                            "description": "Email id",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": ""
+                }
+            ],
+            "description": "Implemented for email-verification"
+        },
+        {
+            "path": "/users/facebook",
+            "operations": [
+                {
+                    "httpMethod": "post",
+                    "summary": "Login with facebook oauth access token",
+                    "nickname": "facebook",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_fb_access_token",
+                            "description": "Facebook access token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "fld_device_token",
+                            "description": "Device Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "name": "fld_device_type",
+                            "description": "Device Type",
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    "android",
+                                    "ios"
+                                ]
+                            },
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid facebook oauth access token"
+                }
+            ],
+            "description": "Login with facebook oauth access token"
+        },
+        {
+            "path": "/users/get-last-active-time/{fld_user_id}",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "summary": "Implemented for getting user last active time",
+                    "nickname": "get-last-active-time",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_user_id",
+                            "description": "User Id",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for getting user last active time"
+        },
+        {
+            "path": "/users/get-my-profile",
+            "operations": [
+                {
+                    "httpMethod": "get",
+                    "summary": "Implemented for getting user's own profile details",
+                    "nickname": "getMyProfile",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for getting user's own profile details"
+        },
+        {
+            "path": "/users/get-server-time",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "summary": "",
+                    "nickname": "get-server-time",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": ""
+                }
+            ],
+            "description": ""
+        },
+        {
+            "path": "/users/get-user-chat-messages",
+            "operations": [
+                {
+                    "httpMethod": "get",
+                    "summary": "Implemented for getting user chat messages",
+                    "nickname": "get-user-chat-messages",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "user_id",
+                            "description": "User Id of chat between you and the user",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": true
+                        },
+                        {
+                            "name": "message_id",
+                            "description": "with respect to message",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "length",
+                            "description": "Number of messages you want to fetch <b>by default value = 10</b>",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "datetime",
+                            "description": "message's datetime of whose respect you want to fetch messages <br/><i style='font-style: italic; font-size: 20px;'>\u2192Note : Use updated_on key of message</i>",
+                            "allowMultiple": false,
+                            "dataType": "datetime",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "direction",
+                            "description": "Direction prev (for older) or next (for newer)",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    "prev",
+                                    "next"
+                                ]
+                            },
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid oauth_token"
+                }
+            ],
+            "description": "Implemented for getting user chat messages"
+        },
+        {
+            "path": "/users/get-user/{fld_user_id}",
+            "operations": [
+                {
+                    "httpMethod": "get",
+                    "summary": "Implemented for getting user profile details",
+                    "nickname": "getUser",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_user_id",
+                            "description": "User Id",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_user_id and fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for getting user profile details by user id"
+        },
+        {
+            "path": "/users/logout",
+            "operations": [
+                {
+                    "httpMethod": "DELETE",
+                    "summary": "Implemented for updating user oauth token to null so that user can only access services after next login",
+                    "nickname": "logout",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for updating user oauth token to null so that user can only access services after next login"
+        },
+        {
+            "path": "/users/mark",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Implemented for marking users as accepted or denied",
+                    "nickname": "add",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_user_id",
+                            "description": "User id",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "fld_status",
+                            "description": "Accept or Deny 1- accept, 0- deny",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": ""
+                }
+            ],
+            "description": "Implemented for marking users as accepted or denied"
+        },
+        {
+            "path": "/users/matches",
+            "operations": [
+                {
+                    "httpMethod": "get",
+                    "summary": "Implemented for getting best matches",
+                    "nickname": "list",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_gender",
+                            "description": "male, female or both (default)",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    "both",
+                                    "male",
+                                    "female"
+                                ]
+                            },
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "fld_age_from",
+                            "description": "age from",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "fld_age_to",
+                            "description": "age to",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "length",
+                            "description": "Number of matches you want to fetch <b>by default value = 10</b>",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for getting best matches"
+        },
+        {
+            "path": "/users/reset-chat-notification",
+            "operations": [
+                {
+                    "httpMethod": "DELETE",
+                    "summary": "Implemented for resetting chat notification",
+                    "nickname": "reset-chat-notification",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": ""
+                }
+            ],
+            "description": "Implemented for resetting chat notification"
+        },
+        {
+            "path": "/users/send-chat-notification",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Implemented for submitting answer",
+                    "nickname": "send-chat-notification",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_user_id",
+                            "description": "User id",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "message",
+                            "description": "text what to send in notification less than 50 characters",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": ""
+                }
+            ],
+            "description": "Implemented for sending chat notification"
+        },
+        {
+            "path": "/users/set-last-active-time",
+            "operations": [
+                {
+                    "httpMethod": "PUT",
+                    "summary": "Implemented for updating user last active time",
+                    "nickname": "set-last-active-time",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for updating user last active time"
+        },
+        {
+            "path": "/users/submit-answer",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Implemented for submitting answer",
+                    "nickname": "add",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_answer_id",
+                            "description": "Answer id",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": ""
+                }
+            ],
+            "description": "Implemented for submitting answer"
+        },
+        {
+            "path": "/users/update-profile-details",
+            "operations": [
+                {
+                    "httpMethod": "PUT",
+                    "summary": "Implemented for updating user profile details",
+                    "nickname": "update-profile-details",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_profile_photo",
+                            "description": "User Profile Photo Facebook url",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "name": "fld_photos[0]",
+                            "description": "User facebook profile photos url",
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "name": "fld_photos[1]",
+                            "description": "User facebook profile photos url",
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "name": "fld_photos[2]",
+                            "description": "User facebook profile photos url",
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "name": "fld_photos[3]",
+                            "description": "User facebook profile photos url",
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "name": "fld_photos[4]",
+                            "description": "User facebook profile photos url",
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "name": "fld_photos[5]",
+                            "description": "User facebook profile photos url",
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "name": "fld_bio",
+                            "description": "User Bio",
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for updating user profile details"
+        },
+        {
+            "path": "/users/update-settings",
+            "operations": [
+                {
+                    "httpMethod": "PUT",
+                    "summary": "Implemented for updating user settings",
+                    "nickname": "update-settings",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_gender",
+                            "description": "User gender : male or female",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": true,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    "male",
+                                    "female"
+                                ]
+                            },
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "fld_search_distance",
+                            "description": "In miles",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "fld_min_age",
+                            "description": "default 18",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "fld_max_age",
+                            "description": "",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "name": "fld_looking_for",
+                            "description": "User looking for : 1-male or 2-female or 0-both",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "path",
+                            "required": true,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    "",
+                                    "1",
+                                    "2"
+                                ]
+                            },
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for updating user settings"
+        },
+        {
+            "path": "/users/upload-chat-file",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Implemented for uploading chat file",
+                    "nickname": "upload-chat-file",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "file",
+                            "description": "Any File",
+                            "allowMultiple": false,
+                            "dataType": "file",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid oauth_token"
+                }
+            ],
+            "description": "Implemented for uploading chat file"
+        },
+        {
+            "path": "/users/verify-code",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Implemented for verify-code",
+                    "nickname": "verify-code",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "code",
+                            "description": "verifiction code",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": ""
+                }
+            ],
+            "description": "Implemented for verify-code"
+        }
+    ]
+}

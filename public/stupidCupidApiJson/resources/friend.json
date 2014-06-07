@@ -1,0 +1,173 @@
+{
+    "basePath": "http://localhost/stupid-cupid/public/api",
+    "swaggerVersion": "1.1",
+    "apiVersion": "0.0",
+    "resourcePath": "/friend",
+    "apis": [
+        {
+            "path": "/friends/delete/{fld_user_id}",
+            "operations": [
+                {
+                    "httpMethod": "DELETE",
+                    "summary": "Implemented for deleting friends",
+                    "nickname": "delete",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "fld_user_id",
+                            "description": "friends User Id",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for deleting friends"
+        },
+        {
+            "path": "/friends/list",
+            "operations": [
+                {
+                    "httpMethod": "get",
+                    "summary": "Implemented for getting friend list",
+                    "nickname": "list",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "length",
+                            "description": "Number of friends you want to fetch <b>by default value = 10</b>",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "datetime",
+                            "description": "friend object's datetime of whose respect you want to fetch friends",
+                            "allowMultiple": false,
+                            "dataType": "datetime",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "direction",
+                            "description": "Direction prev (for older) or next (for newer)",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    "prev",
+                                    "next"
+                                ]
+                            },
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for getting friend list"
+        },
+        {
+            "path": "/friends/requests",
+            "operations": [
+                {
+                    "httpMethod": "get",
+                    "summary": "Implemented for getting friend requests",
+                    "nickname": "list",
+                    "responseClass": "void",
+                    "parameters": [
+                        {
+                            "name": "length",
+                            "description": "Number of friend requests you want to fetch <b>by default value = 10</b>",
+                            "allowMultiple": false,
+                            "dataType": "int",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "datetime",
+                            "description": "friend requests object's datetime of whose respect you want to fetch friend requests",
+                            "allowMultiple": false,
+                            "dataType": "datetime",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "direction",
+                            "description": "Direction prev (for older) or next (for newer)",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    "prev",
+                                    "next"
+                                ]
+                            },
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "Fld-Oauth-Token",
+                            "description": "User Oauth Token",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        },
+                        {
+                            "name": "ApiKey",
+                            "description": "Api Secret Key",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "header",
+                            "required": true
+                        }
+                    ],
+                    "notes": "For valid response try valid fld_oauth_token"
+                }
+            ],
+            "description": "Implemented for getting friend requests"
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+ <?php 
+$roles['add'] = $this->isGranted('role.add');
+$roles['update'] = $this->isGranted('role.update');
+$roles['delete'] = $this->isGranted('role.delete');
+ ?>
+ <div class="pageInfo">
+                  <div class="exl fr">
+          <a href="#"><img src="images/import.png" alt="" title="import "></a>
+                  <a href="#"><img src="images/export.png" alt="" title="export "></a>                  
+               </div>
+                  <h1>All Roles</h1>
+               </div>
+              <!-- widget -->
+               <div class="widget">
+                  <div id="dyn" class="hiddenpars">
+                  <?php 
+			           if(!empty($this->messages))
+			           {
+			           	foreach($this->messages as $k=>$message){
+			           		if(is_array($message)){
+								if($message['status'] == 'OK'){
+									echo "<span class=\"success\">".$message['message']."</span>";
+								}elseif($message['status'] == 'FAIL'){
+									echo "<span class=\"error\">".$message['message']."</span>";
+								}
+							}else{
+								echo $message;
+							}
+			           	}
+			           }
+          		 ?>
+                     <a class="tOptions" title="Options"><img src="images/icons/options" alt="" /></a>
+                     <table cellpadding="0" cellspacing="0" border="0" class="dTable" id="dynamic">
+                        <thead>
+                           <tr>
+                              <th>S. No<span class="sorting" style="display: block;"></span></th>
+                              <th> Title</th>
+                              <th> Permissions</th>
+                              <?php if($roles['update']||$roles['delete']):?>
+                              <th>Action</th>
+                              <?php endif; ?>
+                           </tr>
+                        </thead>
+                        <tbody>
+                     
+                        <?php foreach( $this->roles as $role){?>
+                        <tr>
+                              <td><?php echo ++$i?>.</td>
+                              <td><?php echo $role['roleName']?></td>
+                              <td><?php echo implode('<br/>', $role['permissions']);?></td>
+                              <?php if($roles['update']||$roles['delete']):?>
+                              <td >
+                              <?php if($roles['update']):?>
+                              <a href="<?php echo BASE_URL.'/admin/users/edit-role/'.$role['roleId']?>"><img src="<?php echo BASE_URL?>/images/edit-icon.png" alt="" /></a>
+                              <?php endif;?>
+                              <?php if($roles['delete']):?>
+                              <a href="<?php echo BASE_URL.'/admin/users/delete-role/'.$role['roleId']?>" onclick="return confirm('Are you sure you wish to delete this role?');"><img src="<?php echo BASE_URL?>/images/delete.png" alt="" /></a>
+                              <?php endif;?>
+                              </td>
+                              <?php endif;?>
+                           </tr>
+                        <?php }?>
+                     
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+               <!-- /widget --> 

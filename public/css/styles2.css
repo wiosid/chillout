@@ -1,0 +1,211 @@
+.formWrap input[type='email'],.formWrap input[type='password']{
+    background: #fff;
+    border: 1px solid #B9B9B9;
+    border-radius: 5px 5px 5px 5px !important;
+    color: #4C4C4C;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 7px;
+    display:block;
+}
+.form_response{
+    clear: both;
+    margin: 0 0 20px 0;
+    text-align: left;
+}
+.form_response.error{
+    color:#FFEDED;
+    font-size: 12px;
+    padding: 15px;
+    background-color: #F0D1D1;
+    border-bottom: 1px solid green;
+
+
+}
+
+.form_response.success{
+    background-color: #D1F0DA;
+    border-bottom: 1px solid green;
+    color: green;
+    font-size: 12px;
+    padding: 15px;
+}
+#dyn .form_response.success, #dyn .form_response.error{padding: 5px 0 5px 5px; width: 99.5%;display: block;}
+
+.uploaded_pic {
+    display: inline-block;
+    padding: 15px 5px 0;
+    width: 50px;
+}
+
+.uploaded_pic img{
+    height: 50px;
+    width: 50px;
+}
+.delete_file {
+    color: black;
+    margin-left: -8px;
+    margin-top: -7px;
+    position: absolute;
+}
+.right_span{
+
+}
+.input_left{
+    display: inline-block;
+}
+.input_right {
+    float: right;
+}
+.input_right img {
+    position: relative;
+    top: 8px;
+}
+.input_block, #category_plus_input, #feed_type_plus_input{
+    width: 38%;
+}
+.error_box{margin:0 0 0 10px; font-size:14px; font-weight: bold;}
+ul.child_attr_default_values li label {
+    float: left;
+    width: 30%;
+}
+.brdb{border-bottom:1px solid #B9B9B9;}
+input.formText{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #B9B9B9;
+    border-radius: 5px 5px 5px 5px !important;
+    color: #4C4C4C;
+    display: block;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 7px;
+    width:200px;
+}
+.sequence {
+    width: 60px !important;
+}
+#create_advertisement label {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.logo img {
+    width: 80px;
+}
+.block > img, .unblock > img {
+    width: 16px;
+}
+
+.signIn {
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 0 1px 1px #D3D3D3;
+    margin: 70px auto 100px;
+    padding-bottom: 10px;
+    width: 425px;
+}
+.signIn p {
+    margin-bottom: 10px;
+}
+.signIn form {
+    padding: 0 20px;
+}
+.signIn h2 {
+    background: none repeat scroll 0 0 #E6E6E6;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-bottom: 25px;
+    padding-left: 10px;
+}
+.signIn label {
+    display: inline-block;
+    font-size: 13px;
+    width: 100px;
+}
+.signIn input[type="text"] {
+    border: 1px solid #AFAFAF;
+    padding: 8px;
+    width: 262px;
+}
+.signIn a {
+    text-decoration: underline;
+    vertical-align: middle;
+}
+.signIn a:hover {
+    text-decoration: none;
+}
+.signIn .submit {
+    margin-right: 20px;
+}
+.signUp label {
+    width: 125px;
+}
+.signUp input[type="text"] {
+    width: 235px;
+}
+.signIn.forgot p {
+    margin-bottom: 20px;
+}
+#remember1 {
+    display: block;
+    margin: 0;
+}
+.loginBodyContainer {
+    margin-left: 160px;
+    padding: 70px 0 150px;
+    width: 440px;
+}
+
+.blockbox {
+    border: 1px solid;
+    border-radius: 20px;
+    margin: 50px auto;
+    padding: 30px 30px 50px;
+    text-align: center;
+    width: 75%;
+}
+.blockbox .head {
+    font-size: 25px;
+    height: 60px;
+}
+.blockbox .users_count {
+    font-size: 100px;
+    font-weight: bold;
+}
+.blockbox p {
+    clear: both;
+    display: block;
+    height: auto;
+    margin-top: 10px;
+    padding: 10px 0px;
+    position: relative;
+    width: 100%;
+}
+
+.half {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 49%;
+}
+.five {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 19%;
+}
+.five .blockbox {
+    margin: 30px auto;
+    padding: 0px 10px;
+}
+.five .blockbox .users_count{
+    font-size: 30px;
+}
+.container {
+    background: url("../images/container-bg.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    min-height: 430px;
+    padding: 10px 0;
+}

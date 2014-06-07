@@ -1,0 +1,140 @@
+<?php echo $this->doctype(); ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+            <?php
+            echo $this->headTitle('Sly App -  ' . $this->translate('Find people to meet at your college now'))->setSeparator(' - ')->setAutoEscape(false);
+
+            $baseUrl = BASE_URL;
+
+            echo $this->headMeta()//->appendName("text/html; charset=UTF-8","Content-Type","http-equiv")
+                    ->appendName("width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", "viewport");
+
+            echo $this->headLink(array(
+                        'rel' => 'favicon icon',
+                        'href' => BASE_URL.'/images/favicon2.ico',
+                            ), 'PREPEND')->appendStylesheet(BASE_URL.'/css/reset.css')
+                    ->appendStylesheet(BASE_URL.'/css/fullcalendar.css')
+                    ->appendStylesheet(BASE_URL.'/css/font.css')
+                    ->appendStylesheet(BASE_URL.'/css/ui_custom.css')
+                    ->appendStylesheet(BASE_URL.'/css/fancybox.css')
+                    ->appendStylesheet(BASE_URL.'/css/bootstrap.css')
+                    ->appendStylesheet(BASE_URL.'/css/elfinder.css')
+                    ->appendStylesheet(BASE_URL.'/css/plugins.css')
+                    ->appendStylesheet(BASE_URL.'/css/exrta.css')
+                    ->appendStylesheet(BASE_URL.'/css/styles.css')
+                    ->appendStylesheet(BASE_URL.'/css/styles2.css')
+                    ->appendStylesheet(BASE_URL.'/css/ie.css', 'screen', 'IE');
+//			echo $this->headLink()->appendStylesheet( $baseUrl.'/css/styles.css') 
+//				 	->appendStylesheet( $baseUrl.'/css/styles2.css')
+//					->appendStylesheet(  $baseUrl.'/css/ie.css', 'screen', 'IE');
+
+
+            echo $this->headScript()
+                    ->prependFile($baseUrl . '/js/jquery.min.js')
+//                    ->appendFile($baseUrl . '/tinymce/tinymce.min.js')
+                    ->appendFile($baseUrl . '/js/plugins/forms/jquery.mousewheel.js')
+                    ->appendFile($baseUrl . '/js/custom.js')
+                    ->appendFile($baseUrl . '/js/plugins/forms/ui.spinner.js')
+                    ->appendFile($baseUrl . '/js/jquery-ui.min.js')
+                    ->appendFile($baseUrl . '/js/plugins/charts/excanvas.min.js')
+                    ->appendFile($baseUrl . '/js/plugins/charts/jquery.flot.js')
+                    ->appendFile($baseUrl . '/js/plugins/charts/jquery.flot.orderBars.js')
+                    ->appendFile($baseUrl . '/js/plugins/charts/jquery.flot.pie.js')
+                    ->appendFile($baseUrl . '/js/plugins/charts/jquery.flot.resize.js')
+                    ->appendFile($baseUrl . '/js/plugins/charts/jquery.sparkline.min.js')
+                    ->appendFile($baseUrl . '/js/plugins/tables/jquery.dataTables.js')
+                    ->appendFile($baseUrl . '/js/plugins/tables/jquery.sortable.js')
+                    ->appendFile($baseUrl . '/js/plugins/tables/jquery.resizable.js')
+                    ->appendFile($baseUrl . '/js/plugins/forms/autogrowtextarea.js')
+                    ->appendFile($baseUrl . '/js/plugins/forms/jquery.uniform.js')
+                    ->appendFile($baseUrl . '/js/plugins/forms/jquery.inputlimiter.min.js')
+                    ->appendFile($baseUrl . '/js/plugins/forms/jquery.tagsinput.min.js')
+                    ->appendFile($baseUrl . '/js/plugins/forms/jquery.maskedinput.min.js')
+                    ->appendFile($baseUrl . '/js/plugins/forms/jquery.autotab.js')
+                    ->appendFile($baseUrl . '/js/plugins/forms/jquery.chosen.min.js')
+                    ->appendFile($baseUrl . '/js/plugins/forms/jquery.dualListBox.js')
+                    ->appendFile($baseUrl . '/js/plugins/forms/jquery.cleditor.js')
+                    ->appendFile($baseUrl . '/js/plugins/forms/jquery.ibutton.js')
+                    ->appendFile($baseUrl . '/js/plugins/forms/jquery.validationEngine-en.js')
+                    ->appendFile($baseUrl . '/js/plugins/forms/jquery.validationEngine.js')
+                    ->appendFile($baseUrl . '/js/plugins/uploader/plupload.js')
+                    ->appendFile($baseUrl . '/js/plugins/uploader/plupload.html4.js')
+                    ->appendFile($baseUrl . '/js/plugins/uploader/plupload.html5.js')
+                    ->appendFile($baseUrl . '/js/plugins/uploader/jquery.plupload.queue.js')
+                    ->appendFile($baseUrl . '/js/plugins/wizards/jquery.form.wizard.js')
+                    ->appendFile($baseUrl . '/js/plugins/wizards/jquery.validate.js')
+                    ->appendFile($baseUrl . '/js/plugins/wizards/jquery.form.js')
+                    ->appendFile($baseUrl . '/js/plugins/ui/jquery.collapsible.min.js')
+                    ->appendFile($baseUrl . '/js/plugins/ui/jquery.breadcrumbs.js')
+                    ->appendFile($baseUrl . '/js/plugins/ui/jquery.tipsy.js')
+                    ->appendFile($baseUrl . '/js/plugins/ui/jquery.progress.js')
+                    ->appendFile($baseUrl . '/js/plugins/ui/jquery.timeentry.min.js')
+                    ->appendFile($baseUrl . '/js/plugins/ui/jquery.colorpicker.js')
+                    ->appendFile($baseUrl . '/js/plugins/ui/jquery.jgrowl.js')
+                    ->appendFile($baseUrl . '/js/plugins/ui/jquery.fancybox.js')
+                    ->appendFile($baseUrl . '/js/plugins/ui/jquery.fileTree.js')
+                    ->appendFile($baseUrl . '/js/plugins/ui/jquery.sourcerer.js')
+                    ->appendFile($baseUrl . '/js/plugins/others/jquery.fullcalendar.js')
+                    ->appendFile($baseUrl . '/js/plugins/others/jquery.elfinder.js')
+                    ->appendFile($baseUrl . '/js/plugins/ui/jquery.easytabs.min.js')
+                    ->appendFile($baseUrl . '/js/files/bootstrap.js')
+                    ->appendFile($baseUrl . '/js/files/functions.js')
+                    //->appendFile( $baseUrl.'/js/charts/chart.js')
+                    //->appendFile( $baseUrl.'/js/charts/hBar_side.js')
+                    ->prependScript('BASE_URL = "' . BASE_URL . '";');
+
+            echo $this->headStyle();
+            ?>
+<!--            <script type="text/javascript">
+                tinyMCE.init({
+                    selector: ".tinymce",
+                    //plugins: "advlist anchor autolink autoresize autosave bbcode charmap code contextmenu directionality emoticons example example_dependency fullpage fullscreen hr image insertdatetime layer legacyoutput link lists media nonbreaking noneditable pagebreak paste preview print save searchreplace spellchecker tabfocus table template textcolor visualblocks visualchars wordcount",
+                    plugins: "table code anchor link lists",
+                    tools: "inserttable",
+                    height: 400,
+                    relative_urls: false
+                });
+            </script>-->
+    </head>
+
+    <body>
+
+<?php echo $this->partial('layout/header') ?>
+
+        <?php
+        //$action = $this->ActionName();
+// 			if($action == 'login'){
+// 				$classes = 'loginBodyContainer ';
+// 			}
+        ?>
+
+        <!-- container begins -->
+        <div class="container <?php echo $classes; ?>"> 
+
+<?php if ($this->zfcUserIdentity()): ?>
+                <!-- Sidebar begins -->
+                <?php echo $this->partial("layout/sidebar"); ?>
+                <!-- Sidebar ends -->
+            <?php endif; ?> 
+
+            <!-- Content begins -->
+            <div id="content">
+                <div class="wrapper">
+
+                    <!-- Content begins -->
+<?php echo $this->content; ?>
+                    <!-- Content ends --> 
+
+                </div>
+            </div>
+            <!-- Content ends --> 
+
+        </div>
+        <!-- container end -->
+
+<?php echo $this->partial("layout/footer"); ?>
+
+    </body>
+</html>
